@@ -1,0 +1,75 @@
+# ====================== 基础环境配置 ======================
+# vim:fileencoding=utf-8:foldmethod=marker
+# 松山拓也风格 Kitty 配置 - 极简高效终端工作流
+
+# === 核心基础配置 ===
+# 终端类型，确保和 tmux/vim 兼容
+term xterm-kitty
+
+# 窗口基础设置
+remember_window_size yes
+initial_window_width 1200
+initial_window_height 800
+window_padding_width 10
+# active_border_color #89dceb
+# inactive_border_color #45475a
+border_width 1
+
+# === 字体配置（松山拓也常用的等宽 Nerd 字体）===
+# ====================== 基础环境配置 ======================
+font_family JetBrainsMonoNL Nerd Font Mono
+font_size 13.0
+bold_font auto
+italic_font auto
+bold_italic_font auto
+box_drawing_chars use builtin
+
+# === 性能优化 ===
+disable_ligatures never
+enable_wayland yes
+gpu_force_vsync off
+scrollback_lines 10000
+sync_to_monitor no
+
+# === 颜色主题（直接适配你当前的 Catppuccin-Mocha）===
+#include themes/Catppuccin-Mocha.conf
+###
+background_opacity 0.95 
+background_blur 6
+# === 快捷键映射（松山拓也风格，和 Tmux 高度协同）===
+kitty_mod ctrl+shift
+
+# 重载配置（最常用）
+map kitty_mod+r reload_config
+# 打开主题选择界面（就是你当前用的界面）
+map kitty_mod+t kitten themes
+# 新建/关闭窗口
+map kitty_mod+enter new_window
+map kitty_mod+q close_window
+# 窗口分屏（和 Tmux 逻辑对齐）
+map kitty_mod+d split_window right
+map kitty_mod+s split_window down
+# 窗口切换
+map kitty_mod+left previous_window
+map kitty_mod+right next_window
+# 调整字体大小
+map kitty_mod+equal change_font_size all +1.0
+map kitty_mod+minus change_font_size all -1.0
+map kitty_mod+backspace change_font_size all 0
+
+# === 鼠标行为优化 ===
+mouse_map ctrl+left click open_url
+copy_on_select yes
+# url_color #89dceb
+url_style curly
+
+# === 系统深浅模式联动（可选，和你主题工具的设置对应）===
+# auto_detect_theme yes
+# dark_theme Catppuccin-Mocha
+# light_theme Catppuccin-Latte
+
+
+# BEGIN_KITTY_THEME
+# Spacedust
+include current-theme.conf
+# END_KITTY_THEME

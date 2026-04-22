@@ -1,0 +1,17 @@
+# NeoVim 临时文件
+*.swp
+*.swo
+*~
+.Session.vim
+.NeoTree*
+
+# Kitty 终端
+current-theme.conf
+themes/
+*.pyc
+__pycache__/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
